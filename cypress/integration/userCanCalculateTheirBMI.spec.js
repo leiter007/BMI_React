@@ -25,6 +25,11 @@ describe('BMI Converter', () => {
     it('displays BMI value', async () => {
       cy.contains('BMI of 27.46')
     })
+
+    it('displays kilos and centimetres', async () => {
+      cy.contains('(cm)')
+      cy.contains('(kg)')
+    })
   })
 
   describe('Imperial method', async () => {
@@ -41,5 +46,11 @@ describe('BMI Converter', () => {
     it('displays BMI value', async () => {
       cy.contains('BMI of 26.38')
     })
+
+    it('displays pounds and inches ', async () => {
+      cy.contains('(in)')
+      cy.contains('(lb)')
+    })
   })
+  
 })
