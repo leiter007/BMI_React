@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DisplayResult, { Component } from './Components/displayResult';
 
 
 class App extends Component {
@@ -22,6 +23,11 @@ class App extends Component {
           <label>Height(cm)</label>
           <input name="height" value={this.state.weight} onChange={ (e) => this.setState({ height: e.target.value})}></input>
         </div>
+
+        <DisplayResult
+          weight={this.state.weight}
+          height={this.state.height}
+        />
       </div>
     );
   }
