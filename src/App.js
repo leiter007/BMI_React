@@ -7,7 +7,8 @@ class App extends Component {
     super(props);
     this.state = {
       weight: '',
-      height: ''
+      height: '',
+      method: 'metric'
     }
   }
 
@@ -18,8 +19,8 @@ class App extends Component {
 
         <div>
           <select id="method" >
-            <option value="metric">Metric</option>
-            <option value="imperial">Imperial</option>
+            <option value="metric" onChange={(e) => this.setState({ method: e.target.value })}>metric</option>
+            <option value="imperial" onChange={(e) => this.setState({ method: e.target.value })}>imperial</option>
           </select>
         </div>
 

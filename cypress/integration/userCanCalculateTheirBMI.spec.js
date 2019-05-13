@@ -11,7 +11,7 @@ describe('BMI Converter', () => {
     cy.contains('BMI Calculator');
   });
 
-  describe('Metric method', () => {
+  describe('Metric method', async () => {
     beforeEach(() => {
       cy.get('select[id="method"]').select('metric')
       cy.get('input[name="weight"]').type('95')
@@ -27,5 +27,19 @@ describe('BMI Converter', () => {
     })
   })
 
+  describe('Imperial method', async () => {
+    beforeEach(() => {
+      cy.get('select[id="method"]').select('imperial')
+      cy.get('input[name="weight"]').type('200')
+      cy.get('input[name="height"]').type('73')
+    })
 
+    it('displays assessment', async () => {
+      cy.contains('You are Overweight')
+    })
+
+    it('displays BMI value', async () => {
+      cy.contains('BMI of 26.38')
+    })
+  })
 })
