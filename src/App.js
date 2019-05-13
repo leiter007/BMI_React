@@ -8,7 +8,10 @@ class App extends Component {
     this.state = {
       weight: '',
       height: '',
-      method: 'metric'
+      method: 'metric',
+      weightUnit: 'kg',
+      heightUnit: 'cm'
+      
     }
   }
 
@@ -25,12 +28,12 @@ class App extends Component {
         </div>
 
         <div>
-          <label>Weight(kg)</label>
+          <label>Weight<div>{this.state.weightUnit}</div></label>
           <input name="weight" value={this.state.weight} onChange={ (e) => this.setState({ weight: e.target.value })}></input>
         </div>
 
         <div>
-          <label>Height(cm)</label>
+          <label>Height<div>{this.state.heightUnit}</div></label>
           <input name="height" value={this.state.height} onChange={ (e) => this.setState({ height: e.target.value})}></input>
         </div>
 
