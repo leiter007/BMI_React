@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DisplayResult from './Components/displayResult.jsx';
+import { selector } from 'postcss-selector-parser';
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +14,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <h1>BMI Calculator</h1>
+        <h1>BMI Calculator</h1>
+
+        <div>
+          <select id="method" >
+            <option value="metric">Metric</option>
+            <option value="imperial">Imperial</option>
+          </select>
+        </div>
+
         <div>
           <label>Weight(kg)</label>
           <input name="weight" value={this.state.weight} onChange={ (e) => this.setState({ weight: e.target.value })}></input>
