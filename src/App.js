@@ -18,9 +18,9 @@ class App extends Component {
         <h1>BMI Calculator</h1>
 
         <div>
-          <select id="method" >
-            <option value="metric" onChange={(e) => this.setState({ method: e.target.value })}>metric</option>
-            <option value="imperial" onChange={(e) => this.setState({ method: e.target.value })}>imperial</option>
+          <select id="method" onChange={(e) => this.setState({ method: e.target.value })}>
+            <option value="metric" >metric</option>
+            <option value="imperial" >imperial</option>
           </select>
         </div>
 
@@ -37,6 +37,7 @@ class App extends Component {
         <DisplayResult
           weight={this.state.weight}
           height={this.state.height}
+          method={this.state.method}
         />
       </div>
     );
