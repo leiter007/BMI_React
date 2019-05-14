@@ -15,6 +15,16 @@ class App extends Component {
     }
   }
 
+  // setUnits(e) {
+  //   this.setState({ method: e.target.value}, () =>{
+  //     if (this.state.method === 'imperial') {
+  //       this.setState({weightUnit: 'lb', heightUnit: 'in'})
+  //     } else if (this.state.method === 'metric') {
+  //       this.setState({weightUnit: 'kg', heightUnit: 'cm'})
+  //     }
+  //   })
+  // }
+
   render() {
     return (
       <div className="App">
