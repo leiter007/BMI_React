@@ -35,7 +35,14 @@ class App extends Component {
         onChangeValue={this.setUnits.bind(this)}
         /> */}
 
-        <select id="method" onChange={this.setUnits.bind(this)}>
+        <select id="method" onChange= {(e) => this.setState({ method: e.target.value}, () =>{
+          if (this.state.method === 'imperial') {
+            this.setState({weightUnit: 'lb', heightUnit: 'in'})
+          } else if (this.state.method === 'metric') {
+            this.setState({weightUnit: 'kg', heightUnit: 'cm'})
+          }
+        })
+      }>
           <option value="metric" >metric</option>
           <option value="imperial" >imperial</option>
         </select>
