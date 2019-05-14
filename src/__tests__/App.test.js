@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { stub } from 'sinon';
 
-import App from './App';
+import App from './App.js';
 
 describe('<App />', () => {
   it('renders header', () => {
