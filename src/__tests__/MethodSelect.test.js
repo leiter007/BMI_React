@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 // import { stub } from 'sinon';
 
-import MethodSelect from '../Components/MethodSelect';
+import MethodSelect from '../Components/methodSelect';
 
 describe('<MethodSelect />', () => {
   it('has two methods to choose from', () => {
