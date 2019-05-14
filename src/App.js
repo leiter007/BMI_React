@@ -19,9 +19,9 @@ class App extends Component {
   setUnits(e) {
     this.setState({ method: e.target.value}, () =>{
       if (this.state.method === 'imperial') {
-        this.setState({weightUnit: 'lb', heightUnit: 'in'})
+        this.setState({weightUnit: 'lbs', heightUnit: 'inches', weight: '', height: ''})
       } else if (this.state.method === 'metric') {
-        this.setState({weightUnit: 'kg', heightUnit: 'cm'})
+        this.setState({weightUnit: 'kg', heightUnit: 'cm', weight: '', height: ''})
       }
     })
   }
@@ -35,14 +35,7 @@ class App extends Component {
         onChangeValue={this.setUnits.bind(this)}
         /> */}
 
-        <select id="method" onChange= {(e) => this.setState({ method: e.target.value}, () =>{
-          if (this.state.method === 'imperial') {
-            this.setState({weightUnit: 'lb', heightUnit: 'in'})
-          } else if (this.state.method === 'metric') {
-            this.setState({weightUnit: 'kg', heightUnit: 'cm'})
-          }
-        })
-      }>
+        <select id="method" onChange= {this.setUnits.bind(this)}>
           <option value="metric" >metric</option>
           <option value="imperial" >imperial</option>
         </select>

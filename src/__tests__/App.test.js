@@ -19,6 +19,16 @@ describe('<App />', () => {
     expect(component.contains(heightLabel)).toEqual(true);
   })
 
+
+  it('shows imperial labels when imperial method is selected', () => {
+    const component = shallow(<App />);
+    component.find('select').simulate('change', {target: {value: 'imperial'}});
+    const weightLabel = <label>Weight(lbs)</label>;
+    const heightLabel = <label>Height(inches)</label>;
+    expect(component.contains(weightLabel)).toEqual(true);
+    expect(component.contains(heightLabel)).toEqual(true);
+  })
+
   // it('can change method', () => {
   //   const onChangeValue = stub();
   //   const component = shallow(<App onChangeValue={onChangeValue} />);
