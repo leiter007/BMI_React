@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DisplayResult from './Components/displayResult.jsx';
+import { Container, Divider, Header} from 'semantic-ui-react';
 // import MethodSelect from './Components/methodSelect';
-import { selector } from 'postcss-selector-parser';
 
 class App extends Component {
   constructor(props) {
@@ -28,8 +28,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>BMI Calculator</h1>
+      <>
+        <Container textAlign='center'>
+            <Header as='h1'>BMI Calculator</Header>
+        </Container>
+
+          <Divider horizontal>TRY IT!</Divider>
 
         {/* <MethodSelect
         onChangeValue={this.setUnits.bind(this)}
@@ -55,7 +59,7 @@ class App extends Component {
           height={this.state.height}
           method={this.state.method}
         />
-      </div>
+      </>
     );
   }
 }

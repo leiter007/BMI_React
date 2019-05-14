@@ -7,7 +7,7 @@ import App from '../App.js';
 describe('<App />', () => {
   it('renders header', () => {
     const component = shallow(<App />);
-    const header = <h1>BMI Calculator</h1>;
+    const header = <Header as='h1'>BMI Calculator</Header>;
     expect(component.contains(header)).toEqual(true);
   });
 
