@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import DisplayResult from './Components/displayResult.jsx';
-import { Container, Divider, Header} from 'semantic-ui-react';
-// import MethodSelect from './Components/methodSelect';
+import { Container, Divider, Segment} from 'semantic-ui-react';
 
 class App extends Component {
   constructor(props) {
@@ -29,36 +28,41 @@ class App extends Component {
   render() {
     return (
       <>
-        <Container textAlign='center'>
-            <Header as='h1'>BMI Calculator</Header>
-        </Container>
+        <Segment.Group>
+          <Container textAlign='center'>
+              <h1>BMI Calculator</h1>
+              <p>Select "metric" or "imperial" in the drop-down. Then enter you weight and height in the correct unit type to calculate your BMI!</p>
+          </Container>
 
-          <Divider horizontal>TRY IT!</Divider>
+            <Divider horizontal>TRY IT!</Divider>
 
-        {/* <MethodSelect
-        onChangeValue={this.setUnits.bind(this)}
-        /> */}
+          <Segment.Group>
+            <Segment>
+              <select placeholder='Select metric or imperial' id="method" onChange= {this.setUnits.bind(this)}>
+                <option value="metric" >metric</option>
+                <option value="imperial" >imperial</option>
+              </select>
+            </Segment>
 
-        <select id="method" onChange= {this.setUnits.bind(this)}>
-          <option value="metric" >metric</option>
-          <option value="imperial" >imperial</option>
-        </select>
+            <Segment>
+              <label>Weight({this.state.weightUnit})</label>
+              <input name="weight" value={this.state.weight} onChange={ (e) => this.setState({ weight: e.target.value })}></input>
+            </Segment>
 
-        <div>
-          <label>Weight({this.state.weightUnit})</label>
-          <input name="weight" value={this.state.weight} onChange={ (e) => this.setState({ weight: e.target.value })}></input>
-        </div>
+            <Segment>
+              <label>Height({this.state.heightUnit})</label>
+              <input name="height" value={this.state.height} onChange={ (e) => this.setState({ height: e.target.value})}></input>
+            </Segment>
 
-        <div>
-          <label>Height({this.state.heightUnit})</label>
-          <input name="height" value={this.state.height} onChange={ (e) => this.setState({ height: e.target.value})}></input>
-        </div>
-
-        <DisplayResult
-          weight={this.state.weight}
-          height={this.state.height}
-          method={this.state.method}
-        />
+            <Segment>
+              <DisplayResult
+                weight={this.state.weight}
+                height={this.state.height}
+                method={this.state.method}
+              />
+            </Segment>
+          </Segment.Group>
+        </Segment.Group>
       </>
     );
   }
